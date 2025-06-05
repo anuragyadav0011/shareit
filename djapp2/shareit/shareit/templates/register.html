@@ -1,0 +1,92 @@
+{% load static %}
+
+{% include 'header.html' %}
+
+{% include 'nav.html' %}
+
+{% include 'slider.html' %}
+
+<style>
+.inpt
+{
+ width:100%;	
+}	
+</style>
+
+	<!-- page starts -->
+	<div id="page">
+		
+		
+		<div id="content">
+			<div class="box">
+<font style="font-size:20px;" color="blue">{{output}}</font>				
+<h2>Register Here!!!</h2>
+<form method="post" action="/register/" >
+{% csrf_token %}	
+<table cellspacing="20">
+<tr>
+<td>Name</td>
+<td><input class="inpt" type="text" name="name" /></td>	
+</tr>
+<tr>
+<td>Email</td>
+<td><input class="inpt" type="text" name="email" /></td>	
+</tr>
+<tr>
+<td>Password</td>
+<td><input class="inpt" type="password" name="password" /></td>	
+</tr>
+<tr>
+<td>Mobile</td>
+<td><input class="inpt" type="text" name="mobile" /></td>	
+</tr>
+<tr>
+<td>Address</td>
+<td><textarea rows="5" name="address"></textarea></td>	
+</tr>
+<tr>
+<td>City</td>
+<td><select class="inpt" name="city">
+<option>Select City</option>
+<option>Indore</option>
+<option>Bhopal</option>
+<option>Ujjain</option>	
+</select></td>	
+</tr>
+<tr>
+<td>Gender</td>
+<td>
+	Male<input type="radio" name="gender" value="male"/>
+	&nbsp;&nbsp;
+	Female<input type="radio" name="gender" value="female"/>
+</td>	
+</tr>	
+<tr>
+<td><input type="submit" value="Register" /></td>	
+</tr>
+</table>	
+</form>
+
+			</div>
+			<br class="clearfix" />
+		</div>
+
+
+		<div id="sidebar">
+			<div class="box">
+				<h3>Social Links</h3>
+				<ul class="list">
+					<li class="first"><a href="#">@Gmail</a></li>
+					<li><a href="#">@Linkedin</a></li>
+					<li><a href="#">@Instagram</a></li>
+					<li class="last"><a href="#">@Facebook</a></li>
+				</ul>
+			</div>
+		</div>
+
+
+		<br class="clearfix" />
+	</div>
+	<!-- page ends -->
+
+{% include 'footer.html' %}

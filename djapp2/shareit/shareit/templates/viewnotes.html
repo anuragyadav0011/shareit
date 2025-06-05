@@ -1,0 +1,42 @@
+{% load static %}
+
+{% include 'userheader.html' %}
+
+{% include 'usernav.html' %}
+
+<!-- page starts -->
+<div id="page">
+		
+<h2>View & Download Notes!!!</h2>		
+
+<table cellspacing="10">
+<tr>
+<th>DocumentID</th>
+<th>Title</th>
+<th>Category</th>
+<th>Description</th>
+<th>Document</th>
+<th>UserID</th>
+<th>Info</th>    
+</tr>    
+<tr><td colspan="7"><hr/></td></tr>
+{% for row in data %}
+<tr>
+<td>{{row.docid}}</td>
+<td>{{row.title}}</td>
+<td>{{row.category}}</td>
+<td>{{row.description}}</td>
+<td><a href="/media/{{row.filename}}">Download</a></td>
+<td>{{row.uid}}</td>
+<td>{{row.info}}</td>
+</tr>
+<tr><td colspan="7"><hr/></td></tr>
+{% endfor %}
+
+</table>
+
+<br class="clearfix" />
+</div>
+<!-- page ends -->
+
+{% include 'loginfooter.html' %}

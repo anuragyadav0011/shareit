@@ -1,0 +1,62 @@
+{% load static %}
+
+{% include 'header.html' %}
+
+{% include 'nav.html' %}
+
+{% include 'slider.html' %}
+
+<style>
+.inpt
+{
+ width:100%;	
+}	
+</style>
+
+	<!-- page starts -->
+	<div id="page">
+		
+		
+		<div id="content">
+			<div class="box">
+<font style="font-size:20px;" color="blue">{{output}}</font>				
+<h2>Login Here!!!</h2>
+<form method="post" action="/login/" >
+{% csrf_token %}	
+<table cellspacing="20">
+<tr>
+<td>Username/Email</td>
+<td><input class="inpt" type="text" name="email" /></td>	
+</tr>
+<tr>
+<td>Password</td>
+<td><input class="inpt" type="password" name="password" /></td>	
+</tr>
+<tr>
+<td><input type="submit" value="Login" /></td>	
+</tr>
+</table>	
+</form>
+			</div>
+			<br class="clearfix" />
+		</div>
+
+
+		<div id="sidebar">
+			<div class="box">
+				<h3>Social Links</h3>
+				<ul class="list">
+					<li class="first"><a href="#">@Gmail</a></li>
+					<li><a href="#">@Linkedin</a></li>
+					<li><a href="#">@Instagram</a></li>
+					<li class="last"><a href="#">@Facebook</a></li>
+				</ul>
+			</div>
+		</div>
+
+
+		<br class="clearfix" />
+	</div>
+	<!-- page ends -->
+
+{% include 'footer.html' %}
